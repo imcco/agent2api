@@ -9,7 +9,7 @@ description: Agent2API（workbuddy）仓库接入新提供商（provider）与�
 
 ## 0. 一条红线：README 的支持矩阵就是验收口径
 
-`README.md` 的「支持情况一览」有六列，每一格都是**用户可见的承诺**：
+根 `README.md`（英文）的「Supported Providers」表有六列，每一格都是**用户可见的承诺**（中文译本在 `docs/README.zh-CN.md`，表述为「支持情况一览」）：
 
 | 列 | 含义 |
 |---|---|
@@ -165,7 +165,7 @@ CatPaw 与 AutoClaw 都曾把「上游没有目录接口」写进注释，后来
 
 ### 4.1 i18n
 
-中文是源语言，`i18n/i18n-src/` 下只有五份译文（`en` / `ja` / `ko` / `pt-BR` / `zh-Hant`）。新增的中文文案会被 `scan.mjs` 扫出来，缺译文就是空值。
+中文是 i18n 的源语言，`i18n/i18n-src/` 下只有五份译文（`en` / `ja` / `ko` / `pt-BR` / `zh-Hant`）。新增的中文文案会被 `scan.mjs` 扫出来，缺译文就是空值。
 
 ```bash
 cd desktop-tauri/i18n
@@ -178,10 +178,10 @@ npm run build    # 生成 ui/i18n/*.js
 
 ### 4.2 文档
 
-`README.md` 的「支持情况一览」**六份一一对应**，加一家要六份一起改：
+`README.md` 的「Supported Providers」**六份一一对应**，加一家要六份一起改（注意：**根 `README.md` 是英文**，简体中文在 `docs/README.zh-CN.md`，别把中文写回根目录）：
 
-- `README.md`（简体中文，源）
-- `docs/README.en.md`
+- `README.md`（English，GitHub 默认展示）
+- `docs/README.zh-CN.md`（简体中文，文案源语言）
 - `docs/README.zh-Hant.md`
 - `docs/README.ja.md`
 - `docs/README.ko.md`
