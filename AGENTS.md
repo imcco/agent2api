@@ -13,6 +13,22 @@
 
 其余细则（分支落脚点、署名与 AI 落款、六处版本号、正式版 / beta 完整流程、验收清单、已知坑与排查）见上述 Skill。
 
+## OpenSpec 工作流
+
+> **新功能、行为变更、非平凡 bug 修复：先按 OpenSpec 流程走「提案 → 规格 → 设计 → 任务」，确认后再实现；**
+> **项目上下文与规格入口在 `openspec/project.md`，规则见 `openspec/specs/spec-authoring/spec.md`。**
+
+- 目录：`openspec/config.yaml`（schema: spec-driven，zh-CN）、`openspec/specs/`（主规格库）、`openspec/changes/`（提案与任务）。
+- 入口：OpenCode 会话用 `/opsx-propose` / `/opsx-apply` / `/opsx-archive`；CLI 用 `openspec new change` / `openspec archive`。
+- 安装：本机需 `openspec` CLI（`brew install openspec` 或 `npm install -g @fission-ai/openspec`，Node ≥ 22.20）。
+- 纯文档、配置、重构类改动：在 change 的 `.openspec.yaml` 标记 `skip_specs: true`，不生成 specs。
+
+## 写代码前先读规范
+
+> **涉及 Rust 或 TypeScript 源码的改动，先按 Skill `coding-conventions` 执行：**
+> **`.agents/skills/coding-conventions/SKILL.md`**（入口：落点、通用约定、产物纪律、验收命令），
+> 再按改动语言读 `references/rust.md` / `references/frontend.md`。
+
 ## 反代提供商问题排查
 
 收到反代提供商相关的问题反馈时，**优先使用网络搜索查找已有解决方案**，重点参考同类项目的 Issue、PR、修复记录和适配实现，了解其他项目是否遇到过相同问题、如何解决。**不要默认从零自行排查**：先核对已有方案与本项目的适用性，优先借鉴可靠的解决思路；未找到可靠方案、现有方案不适用或仍有未解决的问题时，再开展针对性的本地排查。
